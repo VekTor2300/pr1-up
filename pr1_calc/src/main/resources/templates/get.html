@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GetCalculate</title>
+
+</head>
+<body>
+
+<h2 style="margin-left: 640px; font-style: oblique">Калькулятор</h2>
+
+<form>
+    <label for="a" style="margin-left: 570px">Число 1</label>
+    <input type="text" name="a" id="a" required style="margin-bottom: 20px; margin-left: 30px"><br>
+
+    <label for="b" style="margin-left: 570px">Число 2</label>
+    <input type="text" name="b" id="b" required style="margin-bottom: 20px; margin-left: 30px"><br>
+
+    <label for="action" style="margin-left: 570px">Операция</label>
+    <select name="action" id="action" style="margin-bottom: 20px; margin-left: 30px; width: 165px; font-size: 24px">
+        <option value="plus">+</option>
+        <option value="min">-</option>
+        <option value="multi">*</option>
+        <option value="div">/</option>
+    </select><br>
+
+    <input type="submit" name="get" value="GET" style="margin-bottom: 20px; width: 265px; height: 30px; margin-left: 570px; border-radius: 3px; border-color: #FFDDD6" formaction="/get" formmethod="get"><br>
+    <input type="submit" name="post" value="POST" style="margin-bottom: 20px; width: 265px; height: 30px; margin-left: 570px; border-radius: 3px; border-color: #FFDDD6" formaction="/post" formmethod="post"><br>
+
+    <p style="margin-left:570px">Результат</p>
+    <p style="margin-left:570px" th:text="${result}"/>
+
+</form>
+
+</body>
+</html>
+<style>
+    body{
+        height: 200px;
+        background: linear-gradient(to right, #FFDDD6 20%, #FFF9ED 20%, #FFF9ED 80%, #DBDBDB 80%);
+    }
+</style>
